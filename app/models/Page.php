@@ -15,9 +15,9 @@ class Page
 
     public function addUser(){
         $this->db->query('INSERT INTO users SET name=:name, email=:email, status=:status');
-        $this->db->bind('name', 'user1');
-        $this->db->bind('email', 'user1@host.loc');
-        $this->db->bind('status', 'user');
+        $this->db->bind('name', 'user2');
+        $this->db->bind('email', 'user2@host.loc');
+        $this->db->bind('status', 'admin');
         $this->db->execute();
     }
 
@@ -26,4 +26,8 @@ class Page
         $this->db->bind('id', 1);
         return $this->db->getOne();
 }
+    public function getUsers(){
+        $this->db->query('SELECT * FROM users');
+        return $this->db->getAll();
+    }
 }
