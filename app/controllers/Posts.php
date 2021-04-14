@@ -9,7 +9,7 @@ class Posts extends Controller
      */
     public function __construct()
     {
-        echo 'Posts class is loaded<br>';
+
     }
     public function index(){
         echo 'index method is loaded<br>';
